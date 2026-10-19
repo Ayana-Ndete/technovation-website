@@ -1,0 +1,120 @@
+/* Technovation: architectural linework against the site's signature blue. */
+.hero-scene { position: relative; isolation: isolate; overflow: hidden; min-height: max(760px, 100svh); display: grid; align-items: center; padding: 155px max(24px, calc((100vw - 1192px) / 2)) 145px; background: #061a3d; color: #f4f8ff; }
+.hero-scene::after { content: ''; position: absolute; inset: auto 0 0; height: 1px; background: linear-gradient(90deg,#5B9BFF, #526b7a55 40%, transparent); }
+.hero-wash { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 82% 42%, #236cff75, transparent 56%), radial-gradient(ellipse at 46% 110%, #1556c85c, transparent 52%), linear-gradient(115deg, #061a3d 18%, #0d3884 70%, #145bea 145%); }
+.hero-wash::after { content: ''; position: absolute; inset: 0; opacity: .2; background-image: radial-gradient(#b9d8ff 0.6px, transparent .6px); background-size: 8px 8px; mask-image: linear-gradient(90deg,transparent 25%,#000); }
+.hero-centre { position: relative; z-index: 2; width: min(730px, 67%); text-align: left; }
+.hero-headline { margin: 0 0 32px; font-weight: 600; letter-spacing: -.06em; line-height: 1.04; }
+.headline-stage { display: grid; }
+.headline-panel { grid-area: 1 / 1; align-self: center; }
+.headline-panel:not(:first-child) { opacity: 0; }
+.headline-primary { display: block; font-size: clamp(44px, 5.6vw, 78px); color: #f4f8ff; }
+.headline-secondary { display: block; font-size: clamp(32px, 3.65vw, 52px); color: #a9d0ff; margin-top: 20px; font-weight: 400; letter-spacing: -.045em; }
+.typing-char { display: inline-block; white-space: pre; }
+.hero-description { max-width: 490px; margin: 0 0 34px; font-size: 16px; line-height: 1.85; color: #c5d9f5; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.hero-actions .hero-button { padding: 16px 25px; border-radius: 3px; font-size: 14px; font-weight: 600; }
+.hero-primary { background: #1B63E8; color: #fff; border: 1px solid #1B63E8; }
+.hero-primary:hover { background: #3E7DFB; }
+.hero-secondary { color: #eef5ff; border: 1px solid #b9d8ff66; background: #0b2f6d80; }
+.hero-secondary:hover { background: #174b9a; border-color: #d4e7ff; }
+.hero-artwork { position: absolute; inset: 0; pointer-events: none; }
+.hero-object { position: absolute; }
+.network-object { width: min(64vw, 840px); right: -6%; top: 50%; margin-top: -350px; }
+.network-drawing { display: block; width: 100%; height: auto; }
+.technovation-cube { filter: drop-shadow(0 0 18px #317fe52b); }
+.hero-artwork.is-paused .cube-connections path { animation-play-state: paused; }
+.hero-scroll-cue { position: absolute; bottom: 30px; left: max(24px, calc((100vw - 1192px) / 2)); display: flex; align-items: center; gap: 15px; padding: 10px 0; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #c5d9f5; }
+.hero-scroll-cue span { width: 10px; height: 10px; border-right: 1px solid #5B9BFF; border-bottom: 1px solid #5B9BFF; rotate: 45deg; }
+.hero-motion-toggle { position: absolute; right: 24px; bottom: 30px; padding: 10px; font-size: 12px; color: #c5d9f5; z-index: 3; }
+@media (max-width: 1050px) {
+  .hero-centre { width: 76%; }
+  .network-object { right: -22%; width: 80vw; opacity: .55; }
+}
+@media (max-width: 639px) {
+  .hero-scene { min-height: max(820px, 100svh); padding: 135px 24px 230px; align-items: start; }
+  .hero-centre { width: 100%; }
+  .headline-primary { font-size: clamp(37px, 10vw, 57px); }
+  .headline-secondary { font-size: clamp(27px, 7vw, 38px); margin-top: 16px; }
+  .hero-description { font-size: 15px; line-height: 1.75; }
+  .network-object { width: 470px; top: auto; bottom: -130px; right: -120px; margin: 0; opacity: .5; }
+  .hero-actions .hero-button { flex: 0 1 auto; padding: 14px 19px; }
+  .hero-motion-toggle { bottom: 22px; right: 14px; }
+  .hero-scroll-cue { bottom: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-motion-toggle { display: none; }
+  .cube-connections path { animation: none; }
+  .headline-panel:not(:first-child) { visibility: hidden; }
+}
+
+/* Short light trails follow the actual isometric face perimeters. */
+.cube-edge-trail {
+  stroke-dasharray: 14 100;
+  animation: cube-edge-arrive 8s linear infinite;
+}
+
+.hero-artwork.is-paused .cube-edge-trail { animation-play-state: paused; }
+@keyframes cube-edge-run {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -100; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cube-edge-trail { animation: none; opacity: 0; }
+}
+
+/* Converge, release the faces, then reassemble on one shared eight-second cycle. */
+.cube-connections path { animation: cube-network-flow 2.4s linear infinite; }
+.cube-face { animation: cube-separate 8s cubic-bezier(.22,.7,.3,1) infinite; }
+.cube-face-top { --face-x: 0px; --face-y: -52px; }
+.cube-face-left { --face-x: -46px; --face-y: 28px; }
+.cube-face-right { --face-x: 46px; --face-y: 28px; }
+.cube-charge { animation: cube-charge 8s ease-in-out infinite; }
+.cube-burst-ring { animation: cube-burst 8s ease-out infinite; transform-origin: 0 0; }
+@keyframes cube-converge {
+  0%, 8% { stroke-dashoffset: 100; opacity: 0; }
+  12% { opacity: .8; }
+  38%, 43% { stroke-dashoffset: 0; opacity: .9; }
+  50%, 100% { stroke-dashoffset: 0; opacity: 0; }
+}
+@keyframes cube-separate {
+  0%, 43%, 92%, 100% { transform: translate(0, 0); }
+  57%, 70% { transform: translate(var(--face-x), var(--face-y)); }
+}
+@keyframes cube-charge {
+  0%, 30%, 53%, 100% { opacity: 0; }
+  40%, 45% { opacity: 1; }
+}
+@keyframes cube-burst {
+  0%, 42% { transform: scale(.5); opacity: 0; }
+  44% { opacity: .85; }
+  59%, 100% { transform: scale(8); opacity: 0; }
+}
+.hero-artwork.is-paused .cube-face,
+.hero-artwork.is-paused .cube-connections path,
+.hero-artwork.is-paused .cube-charge,
+.hero-artwork.is-paused .cube-burst-ring { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .cube-face { animation: none; }
+  .cube-connections path, .cube-charge, .cube-burst-ring { animation: none; opacity: 0; }
+}
+
+/* The three edge trails arrive together at the shared front corner of the lid. */
+@keyframes cube-edge-arrive {
+  0%, 8% { stroke-dashoffset: 14; opacity: 0; }
+  12% { opacity: 1; }
+  40%, 44% { stroke-dashoffset: -98; opacity: 1; }
+  49%, 100% { stroke-dashoffset: -98; opacity: 0; }
+}
+@keyframes cube-network-flow {
+  from { stroke-dashoffset: 26; }
+  to { stroke-dashoffset: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cube-connections path { animation: none; opacity: .5; }
+}
+
+/* Preserve the two-tone mark with a palette suited to each face. */
+.cube-mark-white { color: #0866ff; --mark-secondary: #064b80; }
+.cube-mark-dark { color: #438fff; --mark-secondary: #a4d1ff; }
+.cube-mark-secondary { stroke: var(--mark-secondary, currentColor); }

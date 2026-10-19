@@ -11,6 +11,9 @@ import eacImage from "./assets/images/projects/EAC-SP-1.png"
 import amimsImage from "./assets/images/projects/AMIMS-SP-1.png"
 import cmisImage from "./assets/images/projects/CMIS-SP-1.png"
 import ticketImage from "./assets/images/projects/website_background_2.png"
+import biasharaLinkImage from "./assets/images/projects/biasharalink.png"
+import saritImage from "./assets/images/projects/sarit.png"
+import dealHouseImage from "./assets/images/projects/dealhouse.png"
 const work = [
   {
     id: "kncci",
@@ -104,7 +107,7 @@ const work = [
     value: "A structured messaging platform can help organisations communicate with users and customers through more manageable digital workflows.",
   },
   {
-    id: "biasharalink", name: "BiasharaLink", place: "Kenya", year: "2025", category: "Digital commerce | Business platforms", image: kncciImage,
+    id: "biasharalink", name: "BiasharaLink", place: "Kenya", year: "2025", category: "Digital commerce | Business platforms", image: biasharaLinkImage,
     description: "A digital inquiry and business-matchmaking platform that helps connect commercial enquiries with relevant business opportunities.",
     overview: "BiasharaLink provides a digital route for submitting business inquiries and connecting them with relevant opportunities. Depending on configuration, it may support inquiry capture through web forms, QR codes or links, and structured routing or scoring.",
     features: ["Digital inquiry capture", "Business opportunity discovery", "Inquiry routing and follow-up support", "Connections between businesses and relevant opportunities"],
@@ -118,7 +121,7 @@ const work = [
     value: "A shared digital process can make export barriers easier to record, follow up and manage, helping stakeholders maintain visibility of issues affecting trade.",
   },
   {
-    id: "sarit", name: "Sarit Belong", place: "Kenya", year: "2026", category: "Customer engagement | Digital commerce", image: kncciImage,
+    id: "sarit", name: "Sarit Belong", place: "Kenya", year: "2026", category: "Customer engagement | Digital commerce", image: saritImage,
     description: "A customer-engagement and loyalty platform designed to connect shoppers, merchants and centre services within the Sarit ecosystem.",
     overview: "Sarit Belong brings customer-facing loyalty and engagement services into a digital experience, with live capabilities determined by the deployed configuration.",
     features: ["Customer accounts and loyalty points", "E-purse and transaction history where enabled", "Referrals, vouchers and offers", "Merchant engagement and redemption", "Campaigns and notifications", "Parking-related services where enabled"],
@@ -132,7 +135,7 @@ const work = [
     value: "Bringing business information and interactions into one digital environment can make it easier for users to discover opportunities and coordinate next steps.",
   },
   {
-    id: "dealhouse", name: "DealHouse", place: "Kenya", year: "2025", category: "Business platforms | Digital commerce", image: ticketImage,
+    id: "dealhouse", name: "DealHouse", place: "Kenya", year: "2025", category: "Business platforms | Digital commerce", image: dealHouseImage,
     description: "A digital deal-management environment designed to support the organisation and progression of business transactions.",
     overview: "DealHouse supports structured deal workflows and the information used to move transactions forward. Depending on the deployed scope, functions may include deal rooms, templates, document handling, billing and links to logistics, warehousing or financing workflows.",
     features: ["Deal and document organisation", "Term-sheet and contract templates", "Deal rooms and transaction workflows", "Billing support where enabled", "Connections to logistics, warehousing or financing workflows where implemented"],
