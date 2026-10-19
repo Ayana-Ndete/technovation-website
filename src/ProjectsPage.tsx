@@ -100,14 +100,14 @@ const work = [
     value: "By bringing key scheme-administration functions into an integrated system, Fund Master helps retirement organisations manage operational, financial and member-related information in one digital environment.",
   },
   {
-    id: "ujumbe", name: "Ujumbe Message Delivery Platform", place: "Kenya", year: "2022", category: "Digital communications", image: ticketImage,
+    id: "ujumbe", name: "Ujumbe Message Delivery Platform", place: "Kenya", year: "2022", category: "Digital communications", image: biasharaLinkImage,
     description: "A messaging platform designed to support digital message delivery through technology-enabled communication workflows.",
     overview: "Ujumbe provides a digital foundation for sending and managing messages. Its public description reflects confirmed communication channels, delivery controls, reporting and integration options.",
     features: ["Digital message delivery", "Communication workflow support", "Potential integration with business systems", "Message tracking or reporting where available"],
     value: "A structured messaging platform can help organisations communicate with users and customers through more manageable digital workflows.",
   },
   {
-    id: "biasharalink", name: "BiasharaLink", place: "Kenya", year: "2025", category: "Digital commerce | Business platforms", image: biasharaLinkImage,
+    id: "biasharalink", name: "BiasharaLink", place: "Kenya", year: "2025", category: "Digital commerce | Business platforms", image: ticketImage,
     description: "A digital inquiry and business-matchmaking platform that helps connect commercial enquiries with relevant business opportunities.",
     overview: "BiasharaLink provides a digital route for submitting business inquiries and connecting them with relevant opportunities. Depending on configuration, it may support inquiry capture through web forms, QR codes or links, and structured routing or scoring.",
     features: ["Digital inquiry capture", "Business opportunity discovery", "Inquiry routing and follow-up support", "Connections between businesses and relevant opportunities"],
@@ -485,6 +485,11 @@ export default defineComponent(
                     <span>{selected.value.name}</span>
                   </div>
                   <img
+                    class={[
+                      "ujumbe",
+                      "sarit",
+                      "dealhouse",
+                    ].includes(selected.value.id) ? "px-app-shot" : undefined}
                     src={selected.value.image}
                     alt={`${selected.value.name} interface`}
                   />
@@ -578,6 +583,11 @@ export default defineComponent(
                   <EdgeSignal />
                   <div class="px-tile-image">
                     <img
+                      class={[
+                        "ujumbe",
+                        "sarit",
+                        "dealhouse",
+                      ].includes(p.id) ? "px-app-shot" : undefined}
                       loading="lazy"
                       src={p.image}
                       alt={`${p.name} interface`}
@@ -704,6 +714,11 @@ export default defineComponent(
                 ✕
               </button>
               <img
+                class={[
+                  "ujumbe",
+                  "sarit",
+                  "dealhouse",
+                ].includes(detail.value.id) ? "px-app-shot" : undefined}
                 src={detail.value.image}
                 alt={`${detail.value.name} application screenshot`}
               />

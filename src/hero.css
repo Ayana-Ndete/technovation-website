@@ -1,8 +1,8 @@
 /* Technovation: architectural linework against the site's signature blue. */
 .hero-scene { position: relative; isolation: isolate; overflow: hidden; min-height: max(760px, 100svh); display: grid; align-items: center; padding: 155px max(24px, calc((100vw - 1192px) / 2)) 145px; background: #061a3d; color: #f4f8ff; }
 .hero-scene::after { content: ''; position: absolute; inset: auto 0 0; height: 1px; background: linear-gradient(90deg,#5B9BFF, #526b7a55 40%, transparent); }
-.hero-wash { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 82% 42%, #236cff75, transparent 56%), radial-gradient(ellipse at 46% 110%, #1556c85c, transparent 52%), linear-gradient(115deg, #061a3d 18%, #0d3884 70%, #145bea 145%); }
-.hero-wash::after { content: ''; position: absolute; inset: 0; opacity: .2; background-image: radial-gradient(#b9d8ff 0.6px, transparent .6px); background-size: 8px 8px; mask-image: linear-gradient(90deg,transparent 25%,#000); }
+.hero-wash { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 82% 46%, #33699770, transparent 54%), linear-gradient(105deg, #061a3d 0%, #09254e 44%, #164273 100%); }
+.hero-wash::after { content: ''; position: absolute; inset: 0; opacity: .14; background-image: radial-gradient(#c8e1ff 0.55px, transparent .65px); background-size: 14px 14px; mask-image: radial-gradient(ellipse at 77% 48%, #000 0 28%, transparent 66%); }
 .hero-centre { position: relative; z-index: 2; width: min(730px, 67%); text-align: left; }
 .hero-headline { margin: 0 0 32px; font-weight: 600; letter-spacing: -.06em; line-height: 1.04; }
 .headline-stage { display: grid; }
