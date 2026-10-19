@@ -41,38 +41,6 @@ Start the app, then run `npx playwright test`. Tests use `/usr/bin/google-chrome
 
 The Code Centre now reads published posts from the Nuxt server API instead of browser `localStorage`. Public visitors do not need accounts. Publishing is restricted to authenticated admins at `/admin/login`.
 
-### First-time setup
-
-1. Install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-2. Copy `.env.example` to `.env` and set a real admin email/password:
-
-   ```env
-   # In production, use an absolute path on persistent, writable storage.
-   DATABASE_URL="file:/var/lib/technovation/technovation.db"
-   ADMIN_NAME="Technovation Admin"
-   ADMIN_EMAIL="admin@yourdomain.com"
-   ADMIN_PASSWORD="use-a-long-unique-password"
-   ```
-
-3. Create the SQLite database, generate Prisma Client, seed the starter Code Centre posts, and create the admin account:
-
-   ```bash
-   npm run db:setup
-   ```
-
-4. Run the site:
-
-   ```bash
-   npm run dev
-   ```
-
-5. Open `/admin/login` to manage posts. Admins can create drafts, publish/unpublish, edit, and delete posts. Public users only see posts with `PUBLISHED` status.
-
 ### Important deployment note
 
 The backend requires a running Nitro/Node server; `npm run generate` alone is not enough for admin/API functionality. Build with `npm run build` and run the generated server according to your host's Nuxt/Nitro instructions.
