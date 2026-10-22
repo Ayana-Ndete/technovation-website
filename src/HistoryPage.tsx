@@ -46,8 +46,8 @@ const chapters = [
     "2022",
     "Messages that move information.",
     "Digital communication",
-    "Ujumbe Message Delivery Platform",
-    "The Ujumbe Message Delivery Platform expanded Technovation’s portfolio into digital communications, supporting message delivery through technology-enabled services.",
+    "SMS Tele",
+    "SMS Tele expanded Technovation’s portfolio into digital communications, supporting message delivery through technology-enabled services.",
     "Adding digital messaging to our growing technology portfolio.",
   ],
   [

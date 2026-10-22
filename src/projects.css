@@ -49,3 +49,4 @@
 
 /* Product captures include browser chrome; prioritise the application UI. */
 .px-app-shot { object-fit: cover !important; object-position: center 72% !important; transform: scale(1.24); }
+.px-project-logo { object-fit: contain !important; object-position: center !important; padding: 18px; background: #fff; transform: none !important; }

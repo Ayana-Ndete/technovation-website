@@ -1,0 +1,218 @@
+{
+  "projects": [
+    {
+      "id": "kncci",
+      "name": "KNCCI Marketplace",
+      "place": "Kenya",
+      "category": "Digital commerce",
+      "image": "/projects/KNCCI-SP-1.png",
+      "description": "A marketplace connecting chamber members and their businesses.",
+      "features": [
+        "Member storefronts",
+        "Web & mobile marketplace"
+      ],
+      "imageAlt": "KNCCI Marketplace interface",
+      "status": "PUBLISHED",
+      "sortOrder": 0
+    },
+    {
+      "id": "nda",
+      "name": "NDAMIS",
+      "place": "Uganda",
+      "category": "Medicine regulation",
+      "image": "/projects/UNDA-SP-1.png",
+      "description": "A connected platform for National Drug Authority licensing and permits.",
+      "features": [
+        "Online applications & licensing",
+        "Bank & mobile money integration",
+        "Uganda Single Window integration"
+      ],
+      "imageAlt": "NDAMIS interface",
+      "status": "PUBLISHED",
+      "sortOrder": 10
+    },
+    {
+      "id": "zfda",
+      "name": "ZFDA",
+      "place": "Tanzania",
+      "category": "Medicine regulation",
+      "image": "/projects/ZFDA-SP-1.png",
+      "description": "An information management system for Zanzibar’s food and drug agency.",
+      "features": [
+        "Organisational workflows",
+        "Management information"
+      ],
+      "imageAlt": "ZFDA interface",
+      "status": "PUBLISHED",
+      "sortOrder": 20
+    },
+    {
+      "id": "dpml",
+      "name": "DPML / ABREMA",
+      "place": "Burundi",
+      "category": "Medicine regulation",
+      "image": "/projects/ABREMA-SP-1.png",
+      "description": "Digital workflows for Burundi’s Directorate of Pharmacy, Medicine and Laboratories.",
+      "features": [
+        "Organisational workflows",
+        "Management information"
+      ],
+      "imageAlt": "DPML / ABREMA interface",
+      "status": "PUBLISHED",
+      "sortOrder": 30
+    },
+    {
+      "id": "rfda",
+      "name": "Rwanda FDA",
+      "place": "Rwanda",
+      "category": "Medicine regulation",
+      "image": "/projects/RFDA-SP-1.png",
+      "description": "A product regulatory information management system for Rwanda FDA.",
+      "features": [
+        "Product regulation",
+        "Regulatory information management"
+      ],
+      "imageAlt": "Rwanda FDA interface",
+      "status": "PUBLISHED",
+      "sortOrder": 40
+    },
+    {
+      "id": "eac",
+      "name": "EAC pharmaceutical intelligence",
+      "place": "Regional",
+      "category": "Market intelligence",
+      "image": "/projects/EAC-SP-1.png",
+      "description": "Pharmaceutical market insights across East Africa.",
+      "features": [
+        "Manufacturing & trade data",
+        "Analytical reporting"
+      ],
+      "imageAlt": "EAC pharmaceutical intelligence interface",
+      "status": "PUBLISHED",
+      "sortOrder": 50
+    },
+    {
+      "id": "amims",
+      "name": "AMIMS",
+      "place": "Other projects",
+      "category": "Information management",
+      "image": "/projects/AMIMS-SP-1.png",
+      "description": "An integrated information system for Africa Migrate.",
+      "features": [
+        "Organisational workflows",
+        "Information management"
+      ],
+      "imageAlt": "AMIMS interface",
+      "status": "PUBLISHED",
+      "sortOrder": 60
+    },
+    {
+      "id": "cmis",
+      "name": "CMIS",
+      "place": "Other projects",
+      "category": "Chamber management",
+      "image": "/projects/CMIS-SP-1.png",
+      "description": "A chamber platform bringing membership and trade services together.",
+      "features": [
+        "Certificates of origin",
+        "Membership & CRM",
+        "Payment integration"
+      ],
+      "imageAlt": "CMIS interface",
+      "status": "PUBLISHED",
+      "sortOrder": 70
+    },
+    {
+      "id": "tms",
+      "name": "Ticket Management System",
+      "place": "Other projects",
+      "category": "Customer support",
+      "image": "/projects/website_background_2.png",
+      "description": "Customer support, organised from the first request to resolution.",
+      "features": [
+        "Ticket prioritisation & tracking",
+        "Customised bulk SMS updates"
+      ],
+      "imageAlt": "Ticket Management System interface",
+      "status": "PUBLISHED",
+      "sortOrder": 80
+    },
+    {
+      "id": "featured-1",
+      "name": "East Africa Single Customs Territory Portal",
+      "description": "47% reduction in cross-border processing time",
+      "category": "Digital Infrastructure",
+      "place": "Regional",
+      "image": "/projects/eac.jpg",
+      "imageAlt": "Participants at the EAC International Customs Day 2025 event",
+      "imageCreditUrl": "https://www.eac.int",
+      "client": "EAC",
+      "features": [],
+      "status": "PUBLISHED",
+      "sortOrder": 100,
+      "featured": true,
+      "showInExplorer": false
+    },
+    {
+      "id": "featured-2",
+      "name": "County Digital Governance Programme",
+      "description": "12 county governments connected to national systems",
+      "category": "ICT Consulting",
+      "place": "Kenya",
+      "image": "/projects/giz.jpg",
+      "imageAlt": "Women examining crops in a field, from GIZ’s Kenya programme page",
+      "imageCreditUrl": "https://www.giz.de/en/regions/africa/kenya",
+      "client": "GIZ Kenya",
+      "features": [],
+      "status": "PUBLISHED",
+      "sortOrder": 110,
+      "featured": true,
+      "showInExplorer": false
+    },
+    {
+      "id": "featured-3",
+      "name": "SME Digital Trade Platform",
+      "description": "3,200+ SMEs onboarded across 8 months",
+      "category": "Software Development",
+      "place": "Regional",
+      "image": "/projects/unido.jpg",
+      "imageAlt": "Participants at the UNIDO and Japan technology transfer programme launch",
+      "imageCreditUrl": "https://www.unido.org",
+      "client": "UNIDO",
+      "features": [],
+      "status": "PUBLISHED",
+      "sortOrder": 120,
+      "featured": true,
+      "showInExplorer": false
+    }
+  ],
+  "products": [
+    {
+      "id": "ticket-management",
+      "name": "Ticket Management System",
+      "category": "Customer experience",
+      "description": "Organise, prioritise and track support tickets. Keep customers informed with personalised SMS updates.",
+      "features": [
+        "Ticket tracking",
+        "SMS updates"
+      ],
+      "enquiryUrl": "",
+      "status": "PUBLISHED",
+      "sortOrder": 0
+    },
+    {
+      "id": "nmra",
+      "name": "Technovation NMRA System",
+      "category": "Medicine regulation",
+      "description": "Manage medicine registration, licensing, inspections and safety in one platform for national medicine regulators.",
+      "features": [
+        "Registration",
+        "Licensing",
+        "Pharmacovigilance"
+      ],
+      "enquiryUrl": "",
+      "status": "PUBLISHED",
+      "sortOrder": 10
+    }
+  ]
+}

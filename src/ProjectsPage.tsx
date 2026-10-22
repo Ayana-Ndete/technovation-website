@@ -4,16 +4,17 @@ import { defineComponent, shallowRef, computed, type CSSProperties } from "vue"
 import countries from "./africaMap.json"
 import { useRoute } from "#imports"
 import { NuxtLink } from "#components"
-import kncciImage from "./assets/images/projects/KNCCI-SP-1.png"
-import ndaImage from "./assets/images/projects/UNDA-SP-1.png"
+import kncciImage from "./assets/images/projects/kncci-logo.png"
+import ndamisImage from "./assets/images/projects/ndamis-logo.jpeg"
 import zfdaImage from "./assets/images/projects/ZFDA-SP-1.png"
 import eacImage from "./assets/images/projects/EAC-SP-1.png"
 import amimsImage from "./assets/images/projects/AMIMS-SP-1.png"
 import cmisImage from "./assets/images/projects/CMIS-SP-1.png"
 import ticketImage from "./assets/images/projects/website_background_2.png"
-import biasharaLinkImage from "./assets/images/projects/biasharalink.png"
+import biasharaLinkImage from "./assets/images/projects/biasharalink-logo.png"
 import saritImage from "./assets/images/projects/sarit.png"
-import dealHouseImage from "./assets/images/projects/dealhouse.png"
+import dealHouseImage from "./assets/images/projects/dealhouse-logo.png"
+import smsTeleImage from "./assets/images/projects/smstele-logo.svg"
 const work = [
   {
     id: "kncci",
@@ -33,7 +34,7 @@ const work = [
     place: "Uganda",
     year: "2020",
     category: "Regulatory technology | Public-sector systems",
-    image: ndaImage,
+    image: ndamisImage,
     description: "A digital information management system supporting the National Drug Authority’s regulatory and service workflows in Uganda.",
     overview: "NDAMIS supports the digitisation of regulatory processes and information handled by Uganda’s National Drug Authority. The platform is intended to make relevant services and application processes more accessible and support the management of regulatory information.",
     features: ["Digital support for regulatory workflows", "Management of regulatory information", "Online service access where enabled", "Support for more structured processing of applications and records"],
@@ -100,14 +101,14 @@ const work = [
     value: "By bringing key scheme-administration functions into an integrated system, Fund Master helps retirement organisations manage operational, financial and member-related information in one digital environment.",
   },
   {
-    id: "ujumbe", name: "Ujumbe Message Delivery Platform", place: "Kenya", year: "2022", category: "Digital communications", image: biasharaLinkImage,
+    id: "smstele", name: "SMS Tele", place: "Kenya", year: "2022", category: "Digital communications", image: smsTeleImage,
     description: "A messaging platform designed to support digital message delivery through technology-enabled communication workflows.",
-    overview: "Ujumbe provides a digital foundation for sending and managing messages. Its public description reflects confirmed communication channels, delivery controls, reporting and integration options.",
+    overview: "SMS Tele provides a digital foundation for sending and managing messages. Its public description reflects confirmed communication channels, delivery controls, reporting and integration options.",
     features: ["Digital message delivery", "Communication workflow support", "Potential integration with business systems", "Message tracking or reporting where available"],
     value: "A structured messaging platform can help organisations communicate with users and customers through more manageable digital workflows.",
   },
   {
-    id: "biasharalink", name: "BiasharaLink", place: "Kenya", year: "2025", category: "Digital commerce | Business platforms", image: ticketImage,
+    id: "biasharalink", name: "BiasharaLink", place: "Kenya", year: "2025", category: "Digital commerce | Business platforms", image: biasharaLinkImage,
     description: "A digital inquiry and business-matchmaking platform that helps connect commercial enquiries with relevant business opportunities.",
     overview: "BiasharaLink provides a digital route for submitting business inquiries and connecting them with relevant opportunities. Depending on configuration, it may support inquiry capture through web forms, QR codes or links, and structured routing or scoring.",
     features: ["Digital inquiry capture", "Business opportunity discovery", "Inquiry routing and follow-up support", "Connections between businesses and relevant opportunities"],
@@ -140,13 +141,6 @@ const work = [
     overview: "DealHouse supports structured deal workflows and the information used to move transactions forward. Depending on the deployed scope, functions may include deal rooms, templates, document handling, billing and links to logistics, warehousing or financing workflows.",
     features: ["Deal and document organisation", "Term-sheet and contract templates", "Deal rooms and transaction workflows", "Billing support where enabled", "Connections to logistics, warehousing or financing workflows where implemented"],
     value: "A more structured deal environment can help parties organise transaction information, coordinate next steps and maintain visibility as a deal progresses.",
-  },
-  {
-    id: "ppb", name: "Pharmacy and Poisons Board – Trade Affairs / Electronic Single-Window Initiatives", place: "Kenya", year: "2021", category: "Regulatory technology | Trade facilitation", image: ndaImage,
-    description: "Digital initiatives supporting trade-related regulatory processes and information management for Kenya’s Pharmacy and Poisons Board.",
-    overview: "These initiatives use digital systems to support trade-related regulatory processes and improve the management of information associated with relevant workflows.",
-    features: ["Digital support for trade-related regulatory workflows", "Structured information management", "Support for electronic service processes where implemented", "Alignment with broader trade facilitation objectives"],
-    value: "Digitising selected regulatory processes can support clearer workflows and more organised information exchange between businesses and regulatory stakeholders.",
   },
 ]
 const locations = [
@@ -485,11 +479,13 @@ export default defineComponent(
                     <span>{selected.value.name}</span>
                   </div>
                   <img
-                    class={[
-                      "ujumbe",
-                      "sarit",
-                      "dealhouse",
-                    ].includes(selected.value.id) ? "px-app-shot" : undefined}
+                    class={
+                      ["kncci", "nda", "smstele", "biasharalink", "dealhouse"].includes(selected.value.id)
+                        ? "px-project-logo"
+                        : selected.value.id === "sarit"
+                          ? "px-app-shot"
+                          : undefined
+                    }
                     src={selected.value.image}
                     alt={`${selected.value.name} interface`}
                   />
@@ -583,11 +579,13 @@ export default defineComponent(
                   <EdgeSignal />
                   <div class="px-tile-image">
                     <img
-                      class={[
-                        "ujumbe",
-                        "sarit",
-                        "dealhouse",
-                      ].includes(p.id) ? "px-app-shot" : undefined}
+                      class={
+                        ["kncci", "nda", "smstele", "biasharalink", "dealhouse"].includes(p.id)
+                          ? "px-project-logo"
+                          : p.id === "sarit"
+                            ? "px-app-shot"
+                            : undefined
+                      }
                       loading="lazy"
                       src={p.image}
                       alt={`${p.name} interface`}
@@ -714,11 +712,13 @@ export default defineComponent(
                 ✕
               </button>
               <img
-                class={[
-                  "ujumbe",
-                  "sarit",
-                  "dealhouse",
-                ].includes(detail.value.id) ? "px-app-shot" : undefined}
+                class={
+                  ["kncci", "nda", "smstele", "biasharalink", "dealhouse"].includes(detail.value.id)
+                    ? "px-project-logo"
+                    : detail.value.id === "sarit"
+                      ? "px-app-shot"
+                      : undefined
+                }
                 src={detail.value.image}
                 alt={`${detail.value.name} application screenshot`}
               />

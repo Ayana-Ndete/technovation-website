@@ -1,0 +1,15 @@
+# Static frontend deployment: copy .output/public INCLUDING this file to /website/.
+# Full Node/API deployment should proxy /website/ instead (see README.md).
+Options -MultiViews
+DirectoryIndex index.html
+RewriteEngine On
+RewriteBase /website/
+
+# Never turn missing API responses or assets into HTML.
+RewriteRule ^(?:api|_nuxt|brand|partners|projects|services|team)/ - [L]
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Resolve client routes such as /website/products when opened or refreshed.
+RewriteRule ^ index.html [L]
