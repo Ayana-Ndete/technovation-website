@@ -343,7 +343,8 @@ export default defineComponent(
         </section>
 
         {/* ── Recent Work ──────────────────────────────────────────────────────── */}
-        <section id="recent-work" class="portfolio-section py-24 md:py-32">
+        {/*
+          <section id="recent-work" class="portfolio-section py-24 md:py-32">
           <div class="portfolio-atmosphere" aria-hidden="true">
             <div class="portfolio-glow" />
             <div class="portfolio-lines" />
@@ -387,13 +388,11 @@ export default defineComponent(
                         alt={photoAlt}
                         class="project-image"
                       />
-                      {/* Tag */}
                       <div class="absolute top-3.5 left-3.5">
                         <span class="inline-block px-2.5 py-1 bg-[#1B63E8] text-white text-[10px] font-semibold tracking-[0.06em]">
                           {tag}
                         </span>
                       </div>
-                      {/* Client */}
                       <div class="absolute bottom-3.5 right-3.5">
                         <span class="inline-block px-2.5 py-1 bg-[#0B1F3A]/75 text-[#8AAAC4] text-[10px] font-semibold tracking-[0.06em]">
                           {client}
@@ -420,6 +419,7 @@ export default defineComponent(
             </div>
           </div>
         </section>
+        */}
 
         {/* ── Stat bar ─────────────────────────────────────────────────────────── */}
         <section class="stats-glass" aria-label="Technovation in numbers">
