@@ -123,7 +123,8 @@ export default defineComponent({
         </NuxtLink>
       ))}
       {!mobile && <span class="nav-divider" aria-hidden="true" />}
-      <NuxtLink to="/#contact" class="nav-contact" onClick={close}>
+      <NuxtLink to="/contact" class="nav-contact" onClick={close}
+        aria-current={route.path === "/contact" ? "page" : undefined}>
         Let’s talk <Arrow />
       </NuxtLink>
     </>
