@@ -15,7 +15,33 @@ import biasharaLinkImage from "./assets/images/projects/biasharalink-logo.png"
 import saritImage from "./assets/images/projects/sarit.png"
 import dealHouseImage from "./assets/images/projects/dealhouse-logo.png"
 import smsTeleImage from "./assets/images/projects/smstele-logo.svg"
-const work = [
+import saritLogo from "./assets/images/projects/sarit-logo.png"
+import saritLoyaltyApp from "./assets/images/projects/sarit-loyalty-app.png"
+import fundMasterSite from "./assets/images/projects/fundmaster-site.png"
+import fundMasterLogo from "./assets/images/projects/fundmaster-logo.png"
+import kncciWebsite from "./assets/images/projects/kncci-website.png"
+import smsTeleSendSms from "./assets/images/projects/smstele-send-sms.png"
+import realSourcesEcosystem from "./assets/images/projects/realsources-ecosystem.png"
+import realSourcesHome from "./assets/images/projects/realsources-home.png"
+import zfdaClientPortal from "./assets/images/projects/zfda-client-portal.png"
+import zfdaRegulatoryDashboard from "./assets/images/projects/zfda-regulatory-dashboard.png"
+type Project = {
+  id: string
+  name: string
+  place: string
+  year: string
+  category: string
+  image: string
+  visual?: string
+  visualKind?: "logo"
+  description: string
+  overview: string
+  features: string[]
+  value: string
+  screenshots?: { src: string; alt: string; label: string }[]
+}
+
+const work: Project[] = [
   {
     id: "kncci",
     name: "KNCCI Marketplace",
@@ -27,6 +53,9 @@ const work = [
     overview: "The KNCCI Marketplace supports business visibility and online product discovery within a chamber-led business ecosystem. It provides a digital space where participating businesses can showcase offerings and make it easier for potential customers and partners to find them.",
     features: ["Business and product discovery", "Digital business visibility", "Online storefront opportunities", "Connections between businesses and potential customers"],
     value: "By making business offerings easier to discover online, the marketplace can help participating enterprises extend their reach beyond traditional networks.",
+    screenshots: [
+      { src: kncciWebsite, alt: "KNCCI website homepage", label: "KNCCI website" },
+    ],
   },
   {
     id: "nda",
@@ -51,6 +80,10 @@ const work = [
     overview: "The ZFDA regulatory systems support the agency’s work through digital tools for managing information and regulatory activities. The public description focuses on confirmed workflows delivered.",
     features: ["Regulatory information management", "Digital workflow support", "Structured handling of records and processes", "Support for agency operations"],
     value: "Purpose-built regulatory systems can help agencies organise information, strengthen process visibility and support more consistent service delivery.",
+    screenshots: [
+      { src: zfdaClientPortal, alt: "ZFDA public client portal", label: "Public client portal" },
+      { src: zfdaRegulatoryDashboard, alt: "ZFDA regulatory dashboard", label: "Regulatory workspace" },
+    ],
   },
   {
     id: "ipmis",
@@ -94,11 +127,14 @@ const work = [
     place: "Kenya",
     year: "2016",
     category: "Enterprise systems | Financial technology",
-    image: ticketImage,
+    image: ticketImage, visual: fundMasterLogo, visualKind: "logo",
     description: "An integrated pension administration and investment management system for private- and public-sector retirement organisations.",
     overview: "Fund Master supports core retirement-benefit scheme administration and investment management, including benefits administration, financial accounting, investments and asset management, member self-service, reporting and business intelligence.",
     features: ["Benefits administration", "Financial accounting", "Investments and asset management", "Member self-service", "Reporting and business intelligence", "Integration with SMS, ERP, document management and LDAP"],
     value: "By bringing key scheme-administration functions into an integrated system, Fund Master helps retirement organisations manage operational, financial and member-related information in one digital environment.",
+    screenshots: [
+      { src: fundMasterSite, alt: "FundMaster practitioner guide website", label: "FundMaster website" },
+    ],
   },
   {
     id: "smstele", name: "SMS Tele", place: "Kenya", year: "2022", category: "Digital communications", image: smsTeleImage,
@@ -106,6 +142,9 @@ const work = [
     overview: "SMS Tele provides a digital foundation for sending and managing messages. Its public description reflects confirmed communication channels, delivery controls, reporting and integration options.",
     features: ["Digital message delivery", "Communication workflow support", "Potential integration with business systems", "Message tracking or reporting where available"],
     value: "A structured messaging platform can help organisations communicate with users and customers through more manageable digital workflows.",
+    screenshots: [
+      { src: smsTeleSendSms, alt: "SMS Tele send SMS workspace", label: "SMS Tele messaging workspace" },
+    ],
   },
   {
     id: "biasharalink", name: "BiasharaLink", place: "Kenya", year: "2025", category: "Digital commerce | Business platforms", image: biasharaLinkImage,
@@ -115,18 +154,21 @@ const work = [
     value: "By organising inquiries and helping route them to relevant opportunities, BiasharaLink can make business engagement more structured and easier to manage.",
   },
   {
-    id: "dtic", name: "South Africa DTIC Export Barrier Reporting and Resolution Platform", place: "Other projects", year: "2026", category: "Trade facilitation | Public-sector systems", image: amimsImage,
+    id: "dtic", name: "South Africa DTIC Export Barrier Reporting and Resolution Platform", place: "South Africa", year: "2026", category: "Trade facilitation | Public-sector systems", image: amimsImage,
     description: "A digital platform supporting the reporting, tracking and resolution of barriers affecting exporters in South Africa.",
     overview: "Delivered for South Africa’s Department of Trade, Industry and Competition, the platform supports a structured digital process for reporting export barriers and following their progress towards resolution.",
     features: ["Export-barrier reporting", "Structured recording of reported issues", "Tracking of resolution progress", "Support for coordination among relevant stakeholders"],
     value: "A shared digital process can make export barriers easier to record, follow up and manage, helping stakeholders maintain visibility of issues affecting trade.",
   },
   {
-    id: "sarit", name: "Sarit Belong", place: "Kenya", year: "2026", category: "Customer engagement | Digital commerce", image: saritImage,
+    id: "sarit", name: "Sarit Belong", place: "Kenya", year: "2026", category: "Customer engagement | Digital commerce", image: saritImage, visual: saritLogo, visualKind: "logo",
     description: "A customer-engagement and loyalty platform designed to connect shoppers, merchants and centre services within the Sarit ecosystem.",
     overview: "Sarit Belong brings customer-facing loyalty and engagement services into a digital experience, with live capabilities determined by the deployed configuration.",
     features: ["Customer accounts and loyalty points", "E-purse and transaction history where enabled", "Referrals, vouchers and offers", "Merchant engagement and redemption", "Campaigns and notifications", "Parking-related services where enabled"],
     value: "A connected loyalty experience can help make customer engagement more convenient while giving merchants and centre teams tools to support campaigns and participation.",
+    screenshots: [
+      { src: saritLoyaltyApp, alt: "Sarit loyalty app download page", label: "Loyalty app experience" },
+    ],
   },
   {
     id: "tradeconnect", name: "TradeConnect", place: "Regional", year: "2026", category: "Trade facilitation | Business platforms", image: cmisImage,
@@ -142,15 +184,45 @@ const work = [
     features: ["Deal and document organisation", "Term-sheet and contract templates", "Deal rooms and transaction workflows", "Billing support where enabled", "Connections to logistics, warehousing or financing workflows where implemented"],
     value: "A more structured deal environment can help parties organise transaction information, coordinate next steps and maintain visibility as a deal progresses.",
   },
+  {
+    id: "real-sources-africa", name: "Real Sources Africa", place: "Regional", year: "2026", category: "Trade facilitation | Business platforms", image: realSourcesHome,
+    description: "A digital trade-facilitation platform that connects African SMEs, institutions and markets through structured commercial services.",
+    overview: "Real Sources Africa presents a connected ecosystem of digital platforms and physical channels designed to move trade from paper-based processes to a more trackable digital experience. Its web experience introduces the organisation, its market-facing platforms and the people they serve.",
+    features: ["Trade opportunity discovery", "Digital inquiry and deal routing", "Institutional and SME services", "Market and impact information"],
+    value: "A clear digital front door helps businesses and institutions discover trade services, submit enquiries and understand the platforms available to move opportunities forward.",
+    screenshots: [
+      { src: realSourcesHome, alt: "Real Sources Africa homepage", label: "Trade platform homepage" },
+      { src: realSourcesEcosystem, alt: "Real Sources Africa ecosystem page", label: "Platform ecosystem" },
+    ],
+  },
 ]
 const locations = [
   { name: "Kenya", x: 387, y: 375, labelX: 426, labelY: 364 },
   { name: "Uganda", x: 289, y: 338, labelX: 240, labelY: 298 },
   { name: "Tanzania", x: 442, y: 486, labelX: 458, labelY: 498 },
-  { name: "Rwanda", x: 231, y: 390, labelX: 157, labelY: 375 },
-  { name: "Burundi", x: 225, y: 419, labelX: 154, labelY: 438 },
+  { name: "South Africa", x: 194, y: 510, labelX: 122, labelY: 540 },
 ]
-type Project = typeof work[number]
+
+const mapProjectCountry = (name: string) =>
+  name === "United Republic of Tanzania" ? "Tanzania" : name
+
+const southAfricaShape = countries.find((country) => country.name === "South Africa")
+const projectDetails: Record<string, { userNotes: string[]; integrations?: string[]; delivery?: string }> = {
+  kncci: { userNotes: ["Gives chamber members a visible online storefront", "Makes products and services easier for buyers and partners to discover", "Brings marketplace participation into a shared business ecosystem"], integrations: ["Member and business data", "Web and mobile marketplace experience"] },
+  nda: { userNotes: ["Supports licensing, permits and regulatory service workflows", "Makes applications and regulatory information easier to access and track", "Designed for more structured handling of records and decisions"], integrations: ["Microsoft Dynamics", "Uganda Single Window", "Bank and mobile-money payment channels"] },
+  zfda: { userNotes: ["Supports food, medicines, cosmetics and medical-device regulation", "Combines public applicant journeys with secure internal processing", "Enables clearer oversight of applications, records and services"], integrations: ["ZanMalipo government payments", "Keycloak single sign-on", "Dedicated reporting and analytics"], delivery: "Re-platformed live regulatory services in phases, beginning with the public client portal." },
+  ipmis: { userNotes: ["Brings regional pharmaceutical market information into one view", "Supports evidence-based market analysis across EAC partner states", "Helps stakeholders see market dynamics more clearly"], integrations: ["Regional pharmaceutical data sources", "Analytical reporting"] },
+  "eac-harmonisation": { userNotes: ["Connects information used in medicines-registration harmonisation", "Supports regional coordination among participating regulators", "Helps stakeholders work from more organised registration information"], integrations: ["Six national medicines regulators", "Joint registration and GMP-inspection workflows"] },
+  sps: { userNotes: ["Helps traders and authorities find sanitary and phytosanitary information", "Supports agricultural trade compliance across borders", "Makes relevant requirements and processes easier to navigate"], integrations: ["Permit and e-phyto certificate verification", "TradeMark Africa TLIP pipeline"] },
+  "fund-master": { userNotes: ["Unifies benefits, investment and member information", "Provides self-service and reporting for retirement organisations", "Supports operational and financial visibility in one environment"], integrations: ["SMS", "ERP", "Document management", "LDAP"] },
+  smstele: { userNotes: ["Supports structured digital message delivery", "Helps teams manage communication workflows", "Provides a basis for tracking delivery and reporting"], integrations: ["Business-system integrations where deployed", "Message delivery channels"] },
+  biasharalink: { userNotes: ["Captures enquiries through web forms, QR codes or links", "Validates, scores and routes business opportunities", "Makes follow-up more structured for participating organisations"], integrations: ["AI decision engine", "Digital enquiry channels"] },
+  dtic: { userNotes: ["Lets exporters report barriers through web, mobile, SMS or WhatsApp", "Classifies and routes cases in four languages", "Tracks cases through resolution and flags recurring trade issues"], integrations: ["WhatsApp Business API", "SMS and email", "WTO ePing", "ITC Market Access Map"], delivery: "Delivered with TradeMark Africa for South Africa's Department of Trade, Industry and Competition." },
+  sarit: { userNotes: ["Lets shoppers earn and redeem loyalty points across the Sarit ecosystem", "Connects shoppers, merchants, partners and centre teams", "Supports vouchers, referrals, campaigns and parking-related services where enabled"], integrations: ["M-Pesa payments", "NetSuite ERP", "Infobip OTP and SMS", "Power BI reporting", "Keycloak single sign-on"], delivery: "Technovation provided technical leadership, solution architecture and delivery across the apps, back office and integrations." },
+  tradeconnect: { userNotes: ["Brings trade information, opportunities and interactions together", "Supports discovery, messaging and bookings where enabled", "Gives users one digital environment for relevant next steps"], integrations: ["Related trade platforms where deployed", "Account, profile and wallet functions where enabled"] },
+  dealhouse: { userNotes: ["Organises the documents and next steps that move a transaction forward", "Supports deal rooms, templates and transaction workflows", "Can connect commercial activity to logistics, warehousing and financing"], integrations: ["Billing", "Logistics and warehousing workflows", "Financing workflows where implemented"] },
+  "real-sources-africa": { userNotes: ["Introduces the trade platforms and services available to SMEs and institutions", "Makes it easier to understand who each platform is built for", "Creates a digital route into enquiries, opportunities and trade support"], integrations: ["DealHouse", "BiasharaLink", "Institutional and market-partner channels"] },
+}
 function EdgeSignal() {
   return (
     <svg class="px-edge" aria-hidden="true">
@@ -351,33 +423,28 @@ export default defineComponent(
                     ry="300"
                     fill="url(#map-light)"
                   />
-                  {countries.map((c) => {
-                    const active = locations.some((l) => l.name === c.name)
+                  {countries.filter((c) => {
+                    const name = mapProjectCountry(c.name)
+                    return name !== "South Africa" && locations.some((l) => l.name === name)
+                  }).map((c) => {
+                    const name = mapProjectCountry(c.name)
+                    const active = locations.some((l) => l.name === name)
                     return (
                       <path
                         key={c.name}
                         d={c.d}
                         class={`px-country ${active ? "px-covered" : ""} ${
-                          location.value === c.name ? "px-selected" : ""
-                        } ${hover.value === c.name ? "px-hover" : ""}`}
-                        onClick={active ? () => choose(c.name) : undefined}
+                          location.value === name ? "px-selected" : ""
+                        } ${hover.value === name ? "px-hover" : ""}`}
+                        onClick={active ? () => choose(name) : undefined}
                         onMouseenter={
-                          active ? () => (hover.value = c.name) : undefined
+                          active ? () => (hover.value = name) : undefined
                         }
                         onMouseleave={() => (hover.value = null)}
                         aria-hidden="true"
                       />
                     )
                   })}
-                  <text x="220" y="160" class="px-neighbour">
-                    SOUTH SUDAN
-                  </text>
-                  <text x="458" y="189" class="px-neighbour">
-                    ETHIOPIA
-                  </text>
-                  <text x="97" y="330" class="px-neighbour">
-                    D. R. CONGO
-                  </text>
                   <text x="550" y="412" class="px-ocean">
                     INDIAN
                   </text>
@@ -387,6 +454,30 @@ export default defineComponent(
                   <text x="306" y="503" class="px-neighbour">
                     TANZANIA
                   </text>
+                  {southAfricaShape && (
+                    <g class="px-map-inset">
+                      <rect x="92" y="466" width="130" height="76" rx="8" />
+                      <text x="103" y="480">SOUTH AFRICA</text>
+                      <svg
+                        x="110"
+                        y="482"
+                        width="68"
+                        height="48"
+                        viewBox="-100 840 420 330"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d={southAfricaShape.d}
+                          class={`px-country px-covered ${
+                            location.value === "South Africa" ? "px-selected" : ""
+                          } ${hover.value === "South Africa" ? "px-hover" : ""}`}
+                          onClick={() => choose("South Africa")}
+                          onMouseenter={() => (hover.value = "South Africa")}
+                          onMouseleave={() => (hover.value = null)}
+                        />
+                      </svg>
+                    </g>
+                  )}
                   {locations
                     .filter((l) => l.name !== "Kenya")
                     .map((l, index) => (
@@ -480,13 +571,13 @@ export default defineComponent(
                   </div>
                   <img
                     class={
-                      ["kncci", "nda", "smstele", "biasharalink", "dealhouse"].includes(selected.value.id)
+                      selected.value.visualKind === "logo" || ["kncci", "nda", "smstele", "biasharalink", "dealhouse"].includes(selected.value.id)
                         ? "px-project-logo"
-                        : selected.value.id === "sarit"
+                        : selected.value.id === "sarit" && !selected.value.visual
                           ? "px-app-shot"
                           : undefined
                     }
-                    src={selected.value.image}
+                    src={selected.value.visual ?? selected.value.image}
                     alt={`${selected.value.name} interface`}
                   />
                 </div>
@@ -512,7 +603,6 @@ export default defineComponent(
                 "All projects",
                 ...locations.map((l) => l.name),
                 "Regional",
-                "Other projects",
               ].map((name) => (
                 <button
                   key={name}
@@ -565,50 +655,41 @@ export default defineComponent(
                 </button>
               </p>
             </div>
-            <div
-              class={`px-project-grid ${
-                visible.value.length === 1 ? "px-project-featured" : ""
-              }`}
-            >
-              {visible.value.map((p) => (
-                <button
-                  class="px-project-tile"
-                  key={p.id}
-                  onClick={() => (detail.value = p)}
-                >
-                  <EdgeSignal />
-                  <div class="px-tile-image">
+            <div class="px-case-study-list" aria-live="polite">
+              {visible.value.map((project) => {
+                const context = projectDetails[project.id]
+                const visual = project.visual ?? project.image
+                const isLogo = project.visualKind === "logo" || ["kncci", "nda", "smstele", "biasharalink", "dealhouse"].includes(project.id)
+                return <article class="px-case-study" key={`case-${project.id}`}>
+                  <div class="px-case-visual">
                     <img
-                      class={
-                        ["kncci", "nda", "smstele", "biasharalink", "dealhouse"].includes(p.id)
-                          ? "px-project-logo"
-                          : p.id === "sarit"
-                            ? "px-app-shot"
-                            : undefined
-                      }
+                      class={isLogo ? "px-project-logo" : undefined}
                       loading="lazy"
-                      src={p.image}
-                      alt={`${p.name} interface`}
+                      src={visual}
+                      alt={`${project.name} platform preview`}
                     />
-                    <span>↗</span>
                   </div>
-                  <div class="px-tile-copy">
-                    <p>
-                      {p.year} <span> / {p.category}</span>
-                    </p>
-                    <h3>{p.name}</h3>
-                    <p>{p.description}</p>
-                    <div class="px-tile-features">
-                      {p.features.slice(0, 2).map((f) => (
-                        <span key={f}>{f}</span>
-                      ))}
-                    </div>
-                    <span class="px-tile-link">
-                      Discover the project <span>↗</span>
-                    </span>
+                  <div class="px-case-copy">
+                    <div class="px-case-meta"><span>{project.place === "Tanzania" ? "Zanzibar, Tanzania" : project.place} · {project.year}</span><span>{project.category}</span></div>
+                    <h3>{project.name}</h3>
+                    <p>{project.description}</p>
+                    <div class="px-case-tags">{project.features.slice(0, 3).map((feature) => <span key={feature}>{feature}</span>)}</div>
+                    <details>
+                      <summary>See how it works</summary>
+                      <div class="px-case-detail">
+                        <div><h4>What happens in the platform</h4><p>{project.overview}</p></div>
+                        {context && <div><h4>What users can do</h4><ul>{context.userNotes.map((note) => <li key={note}>{note}</li>)}</ul></div>}
+                        {context?.integrations && <div><h4>Connected services</h4><ul>{context.integrations.map((item) => <li key={item}>{item}</li>)}</ul></div>}
+                        {context?.delivery && <div><h4>Delivery context</h4><p>{context.delivery}</p></div>}
+                      </div>
+                      {project.screenshots && <div class="px-case-screenshots" aria-label={`${project.name} website and product screens`}>
+                        {project.screenshots.map((screen) => <figure key={screen.label}><img src={screen.src} alt={screen.alt} loading="lazy" /><figcaption>{screen.label}</figcaption></figure>)}
+                      </div>}
+                    </details>
+                    <button class="px-case-link" onClick={() => (detail.value = project)}>Open full project profile <span>↗</span></button>
                   </div>
-                </button>
-              ))}
+                </article>
+              })}
             </div>
             {location.value === "Other projects" && (
               <p class="px-footnote">
@@ -713,13 +794,13 @@ export default defineComponent(
               </button>
               <img
                 class={
-                  ["kncci", "nda", "smstele", "biasharalink", "dealhouse"].includes(detail.value.id)
+                  detail.value.visualKind === "logo" || ["kncci", "nda", "smstele", "biasharalink", "dealhouse"].includes(detail.value.id)
                     ? "px-project-logo"
-                    : detail.value.id === "sarit"
+                    : detail.value.id === "sarit" && !detail.value.visual
                       ? "px-app-shot"
                       : undefined
                 }
-                src={detail.value.image}
+                src={detail.value.visual ?? detail.value.image}
                 alt={`${detail.value.name} application screenshot`}
               />
               <div class="px-dialog-copy">
@@ -730,6 +811,14 @@ export default defineComponent(
                 <p>{detail.value.description}</p>
                 <h3>Overview</h3>
                 <p>{detail.value.overview}</p>
+                {projectDetails[detail.value.id] && (
+                  <>
+                    <h3>What users should know</h3>
+                    <ul>{projectDetails[detail.value.id]!.userNotes.map((note) => <li key={note}>{note}</li>)}</ul>
+                    {projectDetails[detail.value.id]!.integrations && <><h3>Connected systems and channels</h3><ul>{projectDetails[detail.value.id]!.integrations?.map((item) => <li key={item}>{item}</li>)}</ul></>}
+                    {projectDetails[detail.value.id]!.delivery && <><h3>Delivery context</h3><p>{projectDetails[detail.value.id]!.delivery}</p></>}
+                  </>
+                )}
                 <h3>Key capabilities / focus areas</h3>
                 <ul>
                   {detail.value.features.map((f) => (
@@ -738,11 +827,9 @@ export default defineComponent(
                 </ul>
                 <h3>The value</h3>
                 <p>{detail.value.value}</p>
-                <a
-                  class="px-action"
-                >
+                <NuxtLink to="/contact" class="px-action">
                   Discuss a similar project ↗
-                </a>
+                </NuxtLink>
               </div>
             </>
           )}

@@ -1,6 +1,6 @@
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from "@tailwindcss/vite"
 
-const baseURL = import.meta.env.NUXT_APP_BASE_URL || "/website/";
+const baseURL = process.env.NUXT_APP_BASE_URL || "/website/"
 
 export default defineNuxtConfig({
   compatibilityDate: "2026-10-04",
@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     "~~/src/about.css",
     "~~/src/history.css",
     "~~/src/code-centre.css",
+    "~~/src/contact.css",
     "~~/src/index.css",
   ],
   app: {
@@ -30,14 +31,9 @@ export default defineNuxtConfig({
             "Software engineering and ICT consulting across East Africa.",
         },
       ],
-      link: [
-        {
-          rel: "icon",
-          href: `${baseURL.replace(/\/$/, "")}/brand/technovation-logo.png`,
-        },
-      ],
+      link: [{ rel: "icon", href: `${baseURL.replace(/\/$/, "")}/brand/technovation-logo.png` }],
     },
-    baseURL: import.meta.env.CONTEXT_PATH || "/website",
+    baseURL:"/website",
   },
   vite: { plugins: [tailwindcss()] },
   nitro: {
@@ -50,6 +46,8 @@ export default defineNuxtConfig({
         "/portfolio",
         "/products",
         "/code-centre",
+        "/contact",
+        "/thank-you",
       ],
     },
   },
@@ -57,4 +55,4 @@ export default defineNuxtConfig({
     "/**": { ssr: false },
     "/admin/**": { ssr: true },
   },
-});
+})
