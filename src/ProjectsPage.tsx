@@ -154,7 +154,7 @@ const work: Project[] = [
     value: "By organising inquiries and helping route them to relevant opportunities, BiasharaLink can make business engagement more structured and easier to manage.",
   },
   {
-    id: "dtic", name: "South Africa DTIC Export Barrier Reporting and Resolution Platform", place: "Other projects", year: "2026", category: "Trade facilitation | Public-sector systems", image: amimsImage,
+    id: "dtic", name: "South Africa DTIC Export Barrier Reporting and Resolution Platform", place: "South Africa", year: "2026", category: "Trade facilitation | Public-sector systems", image: amimsImage,
     description: "A digital platform supporting the reporting, tracking and resolution of barriers affecting exporters in South Africa.",
     overview: "Delivered for South Africa’s Department of Trade, Industry and Competition, the platform supports a structured digital process for reporting export barriers and following their progress towards resolution.",
     features: ["Export-barrier reporting", "Structured recording of reported issues", "Tracking of resolution progress", "Support for coordination among relevant stakeholders"],
@@ -200,9 +200,13 @@ const locations = [
   { name: "Kenya", x: 387, y: 375, labelX: 426, labelY: 364 },
   { name: "Uganda", x: 289, y: 338, labelX: 240, labelY: 298 },
   { name: "Tanzania", x: 442, y: 486, labelX: 458, labelY: 498 },
-  { name: "Rwanda", x: 231, y: 390, labelX: 157, labelY: 375 },
-  { name: "Burundi", x: 225, y: 419, labelX: 154, labelY: 438 },
+  { name: "South Africa", x: 194, y: 510, labelX: 122, labelY: 540 },
 ]
+
+const mapProjectCountry = (name: string) =>
+  name === "United Republic of Tanzania" ? "Tanzania" : name
+
+const southAfricaShape = countries.find((country) => country.name === "South Africa")
 const projectDetails: Record<string, { userNotes: string[]; integrations?: string[]; delivery?: string }> = {
   kncci: { userNotes: ["Gives chamber members a visible online storefront", "Makes products and services easier for buyers and partners to discover", "Brings marketplace participation into a shared business ecosystem"], integrations: ["Member and business data", "Web and mobile marketplace experience"] },
   nda: { userNotes: ["Supports licensing, permits and regulatory service workflows", "Makes applications and regulatory information easier to access and track", "Designed for more structured handling of records and decisions"], integrations: ["Microsoft Dynamics", "Uganda Single Window", "Bank and mobile-money payment channels"] },
@@ -419,33 +423,28 @@ export default defineComponent(
                     ry="300"
                     fill="url(#map-light)"
                   />
-                  {countries.map((c) => {
-                    const active = locations.some((l) => l.name === c.name)
+                  {countries.filter((c) => {
+                    const name = mapProjectCountry(c.name)
+                    return name !== "South Africa" && locations.some((l) => l.name === name)
+                  }).map((c) => {
+                    const name = mapProjectCountry(c.name)
+                    const active = locations.some((l) => l.name === name)
                     return (
                       <path
                         key={c.name}
                         d={c.d}
                         class={`px-country ${active ? "px-covered" : ""} ${
-                          location.value === c.name ? "px-selected" : ""
-                        } ${hover.value === c.name ? "px-hover" : ""}`}
-                        onClick={active ? () => choose(c.name) : undefined}
+                          location.value === name ? "px-selected" : ""
+                        } ${hover.value === name ? "px-hover" : ""}`}
+                        onClick={active ? () => choose(name) : undefined}
                         onMouseenter={
-                          active ? () => (hover.value = c.name) : undefined
+                          active ? () => (hover.value = name) : undefined
                         }
                         onMouseleave={() => (hover.value = null)}
                         aria-hidden="true"
                       />
                     )
                   })}
-                  <text x="220" y="160" class="px-neighbour">
-                    SOUTH SUDAN
-                  </text>
-                  <text x="458" y="189" class="px-neighbour">
-                    ETHIOPIA
-                  </text>
-                  <text x="97" y="330" class="px-neighbour">
-                    D. R. CONGO
-                  </text>
                   <text x="550" y="412" class="px-ocean">
                     INDIAN
                   </text>
@@ -455,6 +454,30 @@ export default defineComponent(
                   <text x="306" y="503" class="px-neighbour">
                     TANZANIA
                   </text>
+                  {southAfricaShape && (
+                    <g class="px-map-inset">
+                      <rect x="92" y="466" width="130" height="76" rx="8" />
+                      <text x="103" y="480">SOUTH AFRICA</text>
+                      <svg
+                        x="110"
+                        y="482"
+                        width="68"
+                        height="48"
+                        viewBox="-100 840 420 330"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d={southAfricaShape.d}
+                          class={`px-country px-covered ${
+                            location.value === "South Africa" ? "px-selected" : ""
+                          } ${hover.value === "South Africa" ? "px-hover" : ""}`}
+                          onClick={() => choose("South Africa")}
+                          onMouseenter={() => (hover.value = "South Africa")}
+                          onMouseleave={() => (hover.value = null)}
+                        />
+                      </svg>
+                    </g>
+                  )}
                   {locations
                     .filter((l) => l.name !== "Kenya")
                     .map((l, index) => (
@@ -580,7 +603,6 @@ export default defineComponent(
                 "All projects",
                 ...locations.map((l) => l.name),
                 "Regional",
-                "Other projects",
               ].map((name) => (
                 <button
                   key={name}
@@ -805,11 +827,9 @@ export default defineComponent(
                 </ul>
                 <h3>The value</h3>
                 <p>{detail.value.value}</p>
-                <a
-                  class="px-action"
-                >
+                <NuxtLink to="/contact" class="px-action">
                   Discuss a similar project ↗
-                </a>
+                </NuxtLink>
               </div>
             </>
           )}
